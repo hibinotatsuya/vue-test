@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue TEST</title>
+<!-- Vue.js を読み込む -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <ol v-html="messages"></ol>
+    </div>
+    <hr>
+    <input type="text" onInput="doInput(event);">
+    <button onclick="doAction()">click</button>
+
+    <script type="text/javascript">
+        var data = {messages: '<li>Hello Vue!</li>'};
+        var app = new Vue({
+            el: '#app',
+            data: data
+        });
+        function doInput(event) {
+            data.message = event.target.value;
+        }
+        function doAction() {
+            data.messages += '<li>' + data.message + '</li>';
+        }
+    </script>
+</body>
+</html>

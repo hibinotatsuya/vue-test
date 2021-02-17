@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+    .ok {
+        font-size: 24pt;
+        color: blue;
+    }
+    .ng {
+        font-size: 20pt;
+        color: gray;
+    }
+    </style>
+    <meta charset="utf-8">
+    <title>Vue TEST</title>
+    <!-- Vue.js を読み込む -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p v-if="flag" class="ok">これは正常</p>
+        <p v-else class="ng">ダメ！！</p>
+    </div>
+    <hr>
+    <button onclick="doAction();">click</button>
+
+    <script type="text/javascript">
+        var data = {
+            flag: false,
+        };
+        var app = new Vue({
+            el: '#app',
+            data: data
+        });
+        function doAction() {
+            data.flag = !data.flag;
+        }
+    </script>
+</body>
+</html>

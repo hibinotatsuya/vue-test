@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue TEST</title>
+<!-- Vue.js を読み込む -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{ message }}
+    </div>
+    <button onclick="doAction()">click</button>
+
+    <script type="text/javascript">
+        var data = {message: 'Hello Vue!'};
+        var app = new Vue({
+            el: '#app',
+            data: data,
+            render: (element) => {
+                return element("ol", [
+                    element("li", "item 1"),
+                    element("li", "item 2"),
+                    element("li", "item 3"),
+                ]);
+            }
+        });
+
+        function doAction() {
+            data.message = "You Clicked!";
+        }
+    </script>
+</body>
+</html>

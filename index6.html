@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue TEST</title>
+<!-- Vue.js を読み込む -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p v-bind:style="style">{{ message }}</p>
+    </div>
+    <hr>
+    <input type="number" onChange="doChange(event);">
+
+    <script type="text/javascript">
+        var data = {
+            message: 'Hello Vue!',
+            style: 'font-size:20pt; color:red;'
+        };
+        var app = new Vue({
+            el: '#app',
+            data: data
+        });
+        function doChange(event) {
+            data.style = 'font-size:' + event.target.value + 'pt; color:red';
+        }
+    </script>
+</body>
+</html>
